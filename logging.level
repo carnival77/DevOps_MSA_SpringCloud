@@ -1,4 +1,0 @@
-logging: # <---- New Entry
-  level:
-    io:
-      spring: DEBUG
