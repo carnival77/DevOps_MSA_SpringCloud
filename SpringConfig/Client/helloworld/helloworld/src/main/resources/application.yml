@@ -1,0 +1,34 @@
+#Discovery 서버 2개로 동시 실행을 위해서는 주석처리
+
+server:
+  port: 9092
+
+spring:
+  config:
+    import: "optional:configserver:"
+  application:
+    name: helloworld
+  cloud:
+    config:
+      uri: http://localhost:8888 # config-server의 포트
+      #Discovery Server   
+      discovery:
+        enabled: true
+        service-id: config-server
+  # 설정하지 않으면 default profile
+  profiles:
+    active:
+    - dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+#Discovery Server   
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      

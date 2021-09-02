@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: helloworld-client
+
+server:
+  port: 8900
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+      minimumNumberOfCalls: 5 
+      failureRateThreshold: 50 
+      waitDurationInOpenState: 10s 
+  instances:
+    helloServiceCircuitBreaker: 
+      baseConfig: default
+      
+resilience4j.ratelimiter:
+  instances:
+    helloServiceCircuitBreaker:
+      limitForPeriod: 1 
+      limitRefreshPeriod: 100s 
+      timeoutDuration: 5s 
+      registerHealthIndicator: true
+      
+resilience4j.bulkhead:
+  instances:
+    helloServiceCircuitBreaker:
+      maxConcurrentCalls: 10 
+      maxWaitDuration: 0 

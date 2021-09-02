@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/carnival77/DevOps_MSA_SpringCloudConfigServer.git
+          default-label: main # git의 default label이 master 가 아닌 main 이기에 추가해야함
+
+#Discovery Server       
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
