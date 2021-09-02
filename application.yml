@@ -1,1 +1,6 @@
 message: Config from application.yml
+
+logging: # <---- New Entry
+  level:
+    io:
+      spring: DEBUG
