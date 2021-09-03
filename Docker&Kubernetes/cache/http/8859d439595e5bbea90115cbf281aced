@@ -1,0 +1,10 @@
+HTTP/2.0 200 OK
+Content-Length: 460
+Audit-Id: 1e16a3ef-b32e-4692-9bdd-b02d0819abe5
+Cache-Control: no-cache, private
+Content-Type: application/json
+Date: Fri, 03 Sep 2021 08:09:54 GMT
+X-Kubernetes-Pf-Flowschema-Uid: 498af33f-5207-4518-8312-45e3d4af42af
+X-Kubernetes-Pf-Prioritylevel-Uid: 325dfe9d-76de-44b9-8e61-1527b94a797b
+
+{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiregistration.k8s.io/v1beta1","resources":[{"name":"apiservices","singularName":"","namespaced":false,"kind":"APIService","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["api-extensions"],"storageVersionHash":"C+s2HXXP47k="},{"name":"apiservices/status","singularName":"","namespaced":false,"kind":"APIService","verbs":["get","patch","update"]}]}
